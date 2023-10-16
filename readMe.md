@@ -1,4 +1,4 @@
-# Custom React Table Package
+# Custom React Table Package (usereactable)
 
 A powerful and customizable React table component for efficient data presentation.
 
@@ -14,4 +14,4 @@ A powerful and customizable React table component for efficient data presentatio
 ## Installation
 
 ```bash
-npm install your-custom-react-table-package
+npm install usereactable
