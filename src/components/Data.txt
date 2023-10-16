@@ -1,0 +1,43 @@
+ <ul className="pagination-container pagination-bar">
+      <li
+        className={`pagination-item ${currentPage === 1 && "disabled"}`}
+        onClick={onPrevious}
+      >
+        <div className="px-2 py-1 text-sm rounded text-nowrap">
+          {"<<"} Previous{" "}
+        </div>
+      </li>
+      {paginationRange.map((pageNumber, i) => {
+        // If the pageItem is a DOT, render the DOTS unicode character
+        if (pageNumber === DOTS) {
+          return (
+            <li key={i} className="pagination-item dots">
+              &#8230;
+            </li>
+          );
+        }
+
+        // Render our Page Pills
+        return (
+          <li
+            key={i}
+            className={`pagination-item ${
+              pageNumber === currentPage && "selected"
+            }`}
+            onClick={() => onPageChange(pageNumber)}
+          >
+            {pageNumber}
+          </li>
+        );
+      })}
+      {/*  Right Navigation arrow */}
+      <li
+        className={`pagination-item ${currentPage === lastPage && "disabled"}`}
+        onClick={onNext}
+      >
+        <div className="px-2 py-1 text-sm rounded text-nowrap">
+          {" "}
+          Next {">>"}
+        </div>
+      </li>
+    </ul>
